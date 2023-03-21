@@ -56,11 +56,9 @@
 }
 .chat-box-outer {
   position: fixed;
-  height: 90%;
   right: 24px;
   bottom: 24px;
-  max-width: 500px;
-  max-height: 415px;
+  max-width: 1000px;
   border-radius: 18px 18px 12px 12px;
   width: 100%;
   background-color: #fff;
@@ -79,7 +77,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Baloo 2", sans-serif;
-  padding-bottom: 15px;
   /* Track */
   /* Handle */
   /* Handle on hover */
@@ -176,7 +173,8 @@
       flex-wrap: wrap;
   overflow: auto;
   margin-bottom: auto;
-  max-height: 63%;
+  max-height: calc(100vh - 380px) !important;
+  height: 100vh;
 }
 .chat-box-outer .chat-box .msg-otr {
   width: 100%;
@@ -188,6 +186,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 30px;
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
@@ -223,8 +224,8 @@
   margin-top: 15px;
   background-color: #1f61d5;
   border-radius: 8px;
-  min-width: 80px;
-  max-width: 255px;
+  min-width: auto;
+  max-width: 525px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -253,9 +254,6 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.chat-box-outer .client-msg .otr {
-  margin-left: 20%;
-}
 .chat-box-outer .client-msg .otr .msg {
   border-radius: 10px 0px 10px 10px;
 }
@@ -271,9 +269,6 @@
 }
 .chat-box-outer .company-msg span {
   text-align: left !important;
-}
-.chat-box-outer .company-msg .otr {
-  margin-right: 20%;
 }
 .chat-box-outer .company-msg .otr .msg {
   background-color: #314B86 !important;
@@ -324,7 +319,7 @@
   border: 1px solid #E5EDFF;
   border-radius: 28px;
   height: 55px;
-  width: 100%;
+  width: 95%;
   background: #F2F6FF;
   position: relative;
   padding-left: 22px;
@@ -338,19 +333,20 @@
   margin-bottom: 5px;
 }
 .chat-box-outer .tye-msg {
-  margin-top: auto;
-  height: 45px;
+  height: auto;
   bottom: 15px;
   z-index: 99;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
   background-color: #fff;
-  margin-top: 15px;
+  padding-top: 15px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 87%;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 20px;
 }
 .chat-box-outer .tye-msg input {
   font-weight: 500;
@@ -366,10 +362,10 @@
   font-size: 13px;
   outline: 0;
   position: absolute;
-  right: -4px;
+  right: 5%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  top: 62%;
+  top: 48%;
 }
 @media (max-width: 1679px) {
   .chat-box-outer .chat-header .avatar {
@@ -387,11 +383,9 @@
   }
   .chat-box-outer .chat-box {
     padding: 15px 18px 0;
-    max-height: 66%;
   }
   .chat-box-outer {
-    max-width: 420px;
-    max-height: 365px;
+    max-width: 935px;
   }
   .chat-box-outer .chat-box .msg-otr .msg {
     font: 300 14px/17px "Baloo 2", cursive;
@@ -399,9 +393,6 @@
   .chat-box-outer .form-control {
     height: 45px;
     font-size: 17px;
-  }
-  .chat-box-outer .tye-msg .send-btn {
-    top: 53%;
   }
   .chat-box-outer .tye-msg .send-btn img {
     width: 30px;
@@ -413,5 +404,16 @@
 @media (max-width: 991px) {
   .chat-box-outer {
     max-width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .chat-box-outer .chat-box .msg-otr .otr {
+    margin-bottom: 10px;
+  }
+  .chat-box-outer .form-control {
+    width: 94%;
+  }
+  .chat-box-outer .tye-msg .send-btn {
+    right: 7%;
   }
 }
